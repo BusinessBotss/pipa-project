@@ -1,0 +1,13 @@
+table_name,record_id,label,primary_path,status,notes
+brands,brand_umi_fun_kitchen,Umi Fun Kitchen,dine,needs_review,Research report: official site/social profiles and public listings; hours/prices require confirmation.
+brands,brand_makai_pool_club,Makai Pool Club,pool,needs_review,Research report: social profiles and public sources; new venue with limited formal ratings.
+brands,brand_nami_madeiro,Nami Madeiro,dine,needs_review,Research report: venue tied to Aldeia do Madeiro Beach; restaurant-specific ratings not consolidated.
+brands,brand_tao_pipa,TĀO Pipa,dine,needs_review,Research report: new venture; no consolidated ratings found.
+brands,brand_casa_palmeira,Casa Palmeira,stay,placeholder,Created as structural placeholder based on project direction; needs real data.
+brands,brand_recanto_de_ibiza,Recanto de Ibiza,stay,placeholder,Created as structural placeholder based on project direction; needs real data.
+brands,brand_pipa_ice_supply,PIPA Ice Supply,partners,placeholder,Created as structural placeholder based on project direction; needs real commercial data.
+quick_paths,stay,Stay,stay,verified,"Find stays, dates and availability."
+quick_paths,dine,Dine,dine,verified,"Book restaurant, café, brunch or dinner."
+quick_paths,pool,Pool,pool,verified,"Day-use, pool club, sunbeds and events."
+quick_paths,events,Events,events,verified,"Parties, dinners, calendar and private experiences."
+quick_paths,partners,Partners,partners,verified,"B2B quotes, suppliers and partnerships."

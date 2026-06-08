@@ -1,0 +1,2 @@
+id,path_id,brand_id,status,name,whatsapp,email,locale,payload_json,consent,source,created_at
+example_lead_do_not_import_prod,dine,brand_umi_fun_kitchen,example,EXAMPLE ONLY,+5500000000000,,pt-BR,"{""people"": 2, ""preferred_datetime"": ""TODO"", ""notes"": ""Example row only; delete before production import""}",true,csv_template,2026-06-08

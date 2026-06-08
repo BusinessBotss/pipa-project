@@ -1,0 +1,6 @@
+id,label_pt,label_en,label_es,description_pt,description_en,description_es,primary_cta_pt,primary_cta_en,primary_cta_es,priority,is_active
+stay,Hospedar,Stay,Alojarse,"Encontre estadias, datas e disponibilidade.","Find stays, dates and availability.","Encuentra alojamientos, fechas y disponibilidad.",Consultar estadia,Request stay,Consultar estancia,1,true
+dine,Comer,Dine,Comer,"Reserve restaurante, café, brunch ou jantar.","Book restaurant, café, brunch or dinner.","Reserva restaurante, café, brunch o cena.",Reservar mesa,Book a table,Reservar mesa,2,true
+pool,Piscina,Pool,Piscina,"Day-use, pool club, espreguiçadeiras e eventos.","Day-use, pool club, sunbeds and events.","Day-use, pool club, sunbeds y eventos.",Consultar day-use,Request day-use,Consultar day-use,3,true
+events,Eventos,Events,Eventos,"Festas, jantares, calendário e experiências privadas.","Parties, dinners, calendar and private experiences.","Fiestas, cenas, calendario y experiencias privadas.",Ver eventos,View events,Ver eventos,4,true
+partners,Parceiros,Partners,Partners,"Cotações B2B, fornecedores e parcerias.","B2B quotes, suppliers and partnerships.","Cotizaciones B2B, proveedores y alianzas.",Solicitar cotação,Request quote,Solicitar cotización,5,true

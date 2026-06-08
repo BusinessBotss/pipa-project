@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark luxury, warm tropical (wood / sand / sea) */
+  --bg: #070707;
+  --bg-soft: #0f0e0c;
+  --card: #141210;
+  --card-2: #1b1813;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --text: #f4ece0;
+  --muted: rgba(244, 236, 224, 0.62);
+  --gold: #c9a96e;
+  --gold-soft: rgba(201, 169, 110, 0.16);
+  --gold-glow: rgba(201, 169, 110, 0.32);
+  --sea: #0c2a33;
+  --sand: #e7d8be;
+  --wood: #6b4f33;
+  --whatsapp: #25d366;
+  --danger: #ef4444;
+  --success: #10b981;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Georgia', 'Times New Roman', serif;
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+/* Visible focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Minimum touch targets */
+button,
+a[role='button'],
+[role='tab'],
+[role='switch'] {
+  min-height: 44px;
+}
+
+/* Honour reduced motion globally — kill transforms/animations/transitions */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container-content {
+  max-width: var(--max-w, 1200px);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}

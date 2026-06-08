@@ -1,0 +1,11 @@
+id,component_name,source,mvp_priority,recommended_use,accessibility_note,reduced_motion_required,status
+component_dialog,Dialog,SmoothUI,1,"Lead capture, brand detail, confirmation modals","Focus trap, aria-modal, aria-labelledby, aria-describedby",true,verified
+component_animated_stepper,Animated Stepper,SmoothUI,2,Quick-path enquiry flow with max 3 interactions,"Step current state, keyboard navigation, focus management",true,verified
+component_checkbox,Checkbox,SmoothUI,3,"Interests, consent, filters","Label connection, aria-checked, keyboard Space",true,verified
+component_toggle,Animated Toggle,SmoothUI,4,Binary preferences and filters,"role switch, aria-checked, aria-label",true,verified
+component_expandable_cards,Expandable Cards,SmoothUI,5,Brand/path cards and details,Prefer aria-expanded and keyboard Enter/Space,true,verified
+component_glow_cards,Glow Hover Cards,SmoothUI,6,Quick-path cards and premium categories,"Decorative glow aria-hidden, pointer-events none",true,verified
+component_image_metadata,Image Metadata Preview,SmoothUI,7,Brand gallery and venue metadata,Buttons with aria-label; semantic metadata table,true,verified
+component_magnetic_button,Magnetic Button,SmoothUI,8,Primary CTAs desktop,Disable effect on touch and reduced motion,true,verified
+component_gradual_blur,GradualBlur,React Bits,9,Hero and gallery edge fade,aria-hidden true; do not block interactions,true,needs_review
+component_blur_text,BlurText,React Bits,10,Hero titles and editorial claims,"aria-label full text, especially letters mode",true,needs_review

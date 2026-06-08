@@ -1,0 +1,14 @@
+id,path_id,step_order,field_key,field_label_pt,field_label_en,field_label_es,field_type,is_required,options,validation_rule,privacy_level,status
+jf_stay_dates,stay,1,date_range,Datas,Dates,Fechas,date_range,true,,future_or_flexible,non_sensitive,verified
+jf_stay_guests,stay,1,guests,Hóspedes,Guests,Huéspedes,number,true,,"min:1,max:99",non_sensitive,verified
+jf_stay_contact,stay,2,whatsapp,WhatsApp,WhatsApp,WhatsApp,tel,true,,phone_br_or_international,pii,verified
+jf_dine_brand,dine,1,brand_id,Lugar,Place,Lugar,select,true,brand_umi_fun_kitchen|brand_nami_madeiro|brand_tao_pipa,brand_exists,non_sensitive,verified
+jf_dine_people,dine,1,people,Pessoas,People,Personas,number,true,,"min:1,max:50",non_sensitive,verified
+jf_dine_datetime,dine,2,preferred_datetime,Data e hora,Date and time,Fecha y hora,datetime,true,,future,non_sensitive,verified
+jf_pool_brand,pool,1,brand_id,Pool club,Pool club,Pool club,select,true,brand_makai_pool_club|brand_nami_madeiro,brand_exists,non_sensitive,verified
+jf_pool_people,pool,1,people,Pessoas,People,Personas,number,true,,"min:1,max:99",non_sensitive,verified
+jf_events_type,events,1,event_type,Tipo de evento,Event type,Tipo de evento,select,true,party|dinner|private_event|calendar,enum,non_sensitive,verified
+jf_partners_business,partners,1,business_type,Tipo de negócio,Business type,Tipo de negocio,select,true,bar|restaurant|hotel|event|beach_club|other,enum,non_sensitive,verified
+jf_partners_quote,partners,2,quote_details,Detalhes da cotação,Quote details,Detalles de cotización,textarea,true,,"min:10,max:1000,sanitize",business_data,verified
+jf_contact_name,all,3,name,Nome,Name,Nombre,text,true,,"min:2,max:100,sanitize",pii,verified
+jf_contact_consent,all,3,consent,Aceito ser contactado,I agree to be contacted,Acepto ser contactado,checkbox,true,,must_be_true,consent,verified

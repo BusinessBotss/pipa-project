@@ -1,0 +1,12 @@
+id,brand_id,channel,label,value,is_public,status,source_note,updated_at
+contact_umi_whatsapp,brand_umi_fun_kitchen,whatsapp,WhatsApp,+5584996162007,true,verified,Research report notes official site WhatsApp.,2026-06-08
+contact_umi_instagram,brand_umi_fun_kitchen,instagram,Instagram,@umifunkitchen,true,verified,Research report social profile.,2026-06-08
+contact_umi_website,brand_umi_fun_kitchen,website,Website,https://umipipa.com.br/,true,verified,Research report official site.,2026-06-08
+contact_makai_instagram,brand_makai_pool_club,instagram,Instagram,@makaipipapoolclub,true,verified,Research report social profile.,2026-06-08
+contact_makai_partner_whatsapp,brand_makai_pool_club,whatsapp,Surf's Up partner WhatsApp,+5512991594653,true,needs_review,"Research report notes WhatsApp via Surf's Up partner, not direct venue phone.",2026-06-08
+contact_nami_instagram,brand_nami_madeiro,instagram,Instagram,@namimadeiro,true,verified,Research report social profile.,2026-06-08
+contact_tao_instagram,brand_tao_pipa,instagram,Instagram,@taopipa,true,verified,Research report social profile.,2026-06-08
+contact_tao_whatsapp,brand_tao_pipa,whatsapp,WhatsApp,+5571996362261,true,verified,Research report notes WhatsApp for booking.,2026-06-08
+contact_casa_palmeira_placeholder,brand_casa_palmeira,whatsapp,WhatsApp,TODO_CONTENT,false,placeholder,Needs real contact.,2026-06-08
+contact_recanto_placeholder,brand_recanto_de_ibiza,whatsapp,WhatsApp,TODO_CONTENT,false,placeholder,Needs real contact.,2026-06-08
+contact_ice_placeholder,brand_pipa_ice_supply,whatsapp,WhatsApp,TODO_CONTENT,false,placeholder,Needs real B2B contact.,2026-06-08
