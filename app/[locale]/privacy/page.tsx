@@ -9,6 +9,10 @@ export default function PrivacyPage({ params }: { params: { locale: Locale } }) 
       'Privacy Policy — TODO_LEGAL. This is a placeholder requiring legal review (Brazil LGPD). We collect only the data needed to respond to enquiries and do not store personal data in the browser.',
     es:
       'Política de Privacidad — TODO_LEGAL. Texto placeholder que requiere revisión legal (LGPD). Recopilamos solo los datos necesarios para responder y no almacenamos datos personales en el navegador.',
+    de:
+      'Datenschutzrichtlinie — TODO_LEGAL. Dies ist ein Platzhalter. Wir erheben nur die zur Beantwortung von Anfragen erforderlichen Daten und speichern keine personenbezogenen Daten im Browser.',
+    fr:
+      'Politique de confidentialité — TODO_LEGAL. Ce texte est un espace réservé. Nous ne collectons que les données nécessaires pour répondre aux demandes et ne stockons pas de données personnelles dans le navigateur.',
   } satisfies Record<Locale, string>;
   return (
     <section className="container-content max-w-prose py-16">

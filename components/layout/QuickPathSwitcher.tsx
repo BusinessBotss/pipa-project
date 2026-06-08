@@ -7,6 +7,7 @@ import { t } from '@/lib/i18n';
 import type { Locale } from '@/types/locale';
 import type { AudiencePath } from '@/types/brand';
 import { cn } from '@/lib/cn';
+import { PremiumButton } from '@/components/ui/PremiumButton';
 
 /**
  * The most important UX decision: choose a path before consuming detail.
@@ -50,24 +51,21 @@ export function QuickPathSwitcher({ locale }: { locale: Locale }) {
               aria-selected={tab.path === active}
               onClick={() => choose(tab.path)}
               className={cn(
-                'rounded-full px-4 py-2 text-sm transition',
+                'rounded-full px-5 py-2.5 text-sm transition-all duration-300 font-medium tracking-wide',
                 tab.path === active
-                  ? 'bg-gold text-black'
-                  : 'border border-line text-muted hover:text-text',
+                  ? 'bg-gold text-black shadow-lg shadow-gold/20 scale-105'
+                  : 'bg-white/[0.03] border border-white/10 text-muted hover:text-sand hover:bg-white/[0.08] hover:border-amber-300/30',
               )}
             >
               {t(locale, tab.labelKey)}
             </button>
           ))}
         </div>
-        <div className="mt-4 flex items-center justify-between gap-4">
-          <p className="text-sm text-muted">{t(locale, 'section.choosePath')}</p>
-          <Link
-            href={`/${locale}${current.href}`}
-            className="rounded-full bg-gold px-5 py-2 text-sm font-medium text-black hover:brightness-110"
-          >
+        <div className="mt-6 flex items-center justify-between gap-4 border-t border-white/10 pt-4">
+          <p className="text-sm text-sand/80">{t(locale, 'section.choosePath')}</p>
+          <PremiumButton href={`/${locale}${current.href}`} className="px-5 py-2 text-sm">
             {t(locale, current.ctaKey)}
-          </Link>
+          </PremiumButton>
         </div>
       </div>
     </section>

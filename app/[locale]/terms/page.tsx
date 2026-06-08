@@ -9,6 +9,10 @@ export default function TermsPage({ params }: { params: { locale: Locale } }) {
       'Terms of Use — TODO_LEGAL. Placeholder requiring legal review. Availability and prices may change; we confirm before finalising any booking.',
     es:
       'Términos de Uso — TODO_LEGAL. Placeholder que requiere revisión legal. La disponibilidad y los precios pueden cambiar; confirmamos antes de cerrar cualquier reserva.',
+    de:
+      'Nutzungsbedingungen — TODO_LEGAL. Platzhalter, der eine rechtliche Überprüfung erfordert. Verfügbarkeit und Preise können sich ändern; wir bestätigen dies, bevor wir eine Buchung abschließen.',
+    fr:
+      'Conditions d\'utilisation — TODO_LEGAL. Espace réservé nécessitant une révision légale. La disponibilité et les prix peuvent changer ; nous confirmons avant de finaliser toute réservation.',
   } satisfies Record<Locale, string>;
   return (
     <section className="container-content max-w-prose py-16">

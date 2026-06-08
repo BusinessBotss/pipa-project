@@ -15,7 +15,7 @@ export const WHATSAPP_NUMBERS = {
   umi: 'PENDING', // research had 5584996162007 (official site) — flagged needs_review, awaiting reconfirmation
   makai: '5584994196079',
   makaiClub: '5584994196079',
-  nami: 'PENDING',
+  nami: '5584994202821',
   tao: 'PENDING', // research had 5571996362261 — kept as source note in brands.ts, awaiting reconfirmation
   newRestaurant: 'PENDING',
   ice: 'PENDING',

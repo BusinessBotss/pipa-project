@@ -4,6 +4,8 @@ const INTL_LOCALE: Record<Locale, string> = {
   'pt-BR': 'pt-BR',
   en: 'en-US',
   es: 'es-ES',
+  de: 'de-DE',
+  fr: 'fr-FR',
 };
 
 /** Format a BRL amount for the given app locale. */

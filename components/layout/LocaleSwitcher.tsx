@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from 'next/navigation';
 import { LOCALES, type Locale } from '@/types/locale';
 
-const LABEL: Record<Locale, string> = { 'pt-BR': 'PT', en: 'EN', es: 'ES' };
+const LABEL: Record<Locale, string> = { 'pt-BR': 'PT', en: 'EN', es: 'ES', de: 'DE', fr: 'FR' };
 
 /** Switches locale while preserving the current path. */
 export function LocaleSwitcher({ locale }: { locale: Locale }) {
@@ -22,15 +22,15 @@ export function LocaleSwitcher({ locale }: { locale: Locale }) {
   }
 
   return (
-    <div className="flex items-center gap-1" role="group" aria-label="Language">
+    <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.02] p-1 backdrop-blur" role="group" aria-label="Language">
       {LOCALES.map((l) => (
         <button
           key={l}
           onClick={() => switchTo(l)}
           aria-current={l === locale ? 'true' : undefined}
           className={
-            'rounded px-2 py-1 text-xs ' +
-            (l === locale ? 'bg-card-2 text-gold' : 'text-muted hover:text-text')
+            'rounded-full px-2.5 py-1 text-[10px] font-medium tracking-widest transition-all ' +
+            (l === locale ? 'bg-gold text-black shadow-lg' : 'text-sand hover:bg-white/[0.08]')
           }
         >
           {LABEL[l]}

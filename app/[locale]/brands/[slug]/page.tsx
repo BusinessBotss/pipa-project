@@ -10,6 +10,8 @@ import { brandJsonLd } from '@/lib/schema';
 import { VerificationBadge } from '@/components/brand/VerificationBadge';
 import { fieldText } from '@/components/brand/fieldText';
 import { BrandCard } from '@/components/brand/BrandCard';
+import { PremiumButton } from '@/components/ui/PremiumButton';
+import { LuxuryCard } from '@/components/ui/LuxuryCard';
 import { SectionHeading } from '@/components/sections/SectionHeading';
 import { resolveWhatsapp, resolveInstagram } from '@/lib/config/contact-routing';
 import { buildWhatsappLink } from '@/lib/whatsapp';
@@ -147,9 +149,9 @@ export default function BrandPage({
             </>
           )}
 
-          <h2 className="mt-10 text-xl">Media & Content</h2>
+          <h2 className="mt-10 text-xl text-sand">Media & Content</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-line-strong p-4">
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] backdrop-blur p-4">
               <h3 className="font-medium text-sand mb-2">Menus</h3>
               {brandMenus.filter(m => m.brandId === brand.id && m.isPublic).length > 0 ? (
                 <ul className="space-y-1 text-sm text-muted">
@@ -170,7 +172,7 @@ export default function BrandPage({
               )}
             </div>
 
-            <div className="rounded-xl border border-line-strong p-4">
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] backdrop-blur p-4">
               <h3 className="font-medium text-sand mb-2">Gallery</h3>
               {galleryAssets.length > 0 ? (
                 <div className="grid grid-cols-3 gap-1 mt-2">
@@ -194,14 +196,14 @@ export default function BrandPage({
         </div>
 
         <aside className="lg:col-span-1">
-          <div className="sticky top-24 rounded-2xl border border-line-strong bg-card p-6">
-            <p className="text-sm text-muted">{t(locale, 'success.disclaimer')}</p>
-            <Link
+          <LuxuryCard className="sticky top-24 p-6 bg-white/[0.02] backdrop-blur border border-white/10">
+            <p className="text-sm text-muted/80">{t(locale, 'success.disclaimer')}</p>
+            <PremiumButton
               href={`/${locale}/book/${brand.slug}`}
-              className="mt-4 block rounded-full bg-gold px-5 py-3 text-center text-sm font-medium text-black hover:brightness-110"
+              className="mt-6 w-full py-3"
             >
               {t(locale, brand.primaryCta.labelKey as TranslationKey)}
-            </Link>
+            </PremiumButton>
 
             {/* Direct WhatsApp only when a confirmed number exists; otherwise the
                 booking CTA above acts as "Consultar". Never renders PENDING. */}
@@ -235,7 +237,7 @@ export default function BrandPage({
                 <span className="text-muted">{t(locale, 'common.mapsSoon')}</span>
               )}
             </div>
-          </div>
+          </LuxuryCard>
         </aside>
       </section>
 

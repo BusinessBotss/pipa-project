@@ -3,9 +3,10 @@ import Link from 'next/link';
 import type { Brand } from '@/types/brand';
 import type { Locale } from '@/types/locale';
 import { localize, t } from '@/lib/i18n';
-import { GlowCard } from '@/components/ui/GlowCard';
+import { LuxuryCard } from '@/components/ui/LuxuryCard';
 import { VerificationBadge } from './VerificationBadge';
 import { fieldText } from './fieldText';
+import { PremiumButton } from '@/components/ui/PremiumButton';
 import type { TranslationKey } from '@/data/translations';
 import { getBrandHeroAsset } from '@/data/brand-assets';
 import { isSafePublicUrl } from '@/lib/security/url';
@@ -32,16 +33,17 @@ export function BrandCard({ brand, locale }: { brand: Brand; locale: Locale }) {
   const heroSrc = heroAsset && isSafePublicUrl(heroAsset.url) ? heroAsset.url : brand.heroImage;
 
   return (
-    <GlowCard hue={pathHue[brand.audiencePath]} className="flex flex-col">
+    <LuxuryCard interactive className="flex flex-col h-full group">
       <Link href={href} className="relative block aspect-[4/3] overflow-hidden">
         <Image
           src={heroSrc}
           alt={localize(locale, brand.subtitle)}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover transition-transform duration-500 hover:scale-105"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
-        <span className="absolute left-3 top-3 rounded-full bg-black/60 px-2 py-0.5 text-xs text-sand">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+        <span className="absolute left-3 top-3 rounded-full bg-black/60 px-2 py-0.5 text-xs text-sand border border-white/10 backdrop-blur-md">
           {t(locale, pathLabelKey[brand.audiencePath])}
         </span>
         {brand.categoryGroups.includes('coming_soon') && (
@@ -59,18 +61,15 @@ export function BrandCard({ brand, locale }: { brand: Brand; locale: Locale }) {
         <p className="text-xs text-muted">
           {brand.location.area} · {fieldText(brand.priceLabel, locale)}
         </p>
-        <div className="mt-auto flex items-center gap-3 pt-2">
-          <Link
-            href={href}
-            className="rounded-full bg-gold px-4 py-2 text-sm font-medium text-black hover:brightness-110"
-          >
+        <div className="mt-auto flex items-center gap-3 pt-4">
+          <PremiumButton href={href} className="px-4 py-2 text-xs">
             {t(locale, brand.primaryCta.labelKey as TranslationKey)}
-          </Link>
-          <Link href={href} className="text-sm text-muted underline-offset-4 hover:underline">
+          </PremiumButton>
+          <Link href={href} className="text-sm text-sand underline-offset-4 hover:text-gold hover:underline transition-colors">
             {t(locale, 'common.viewDetails')}
           </Link>
         </div>
       </div>
-    </GlowCard>
+    </LuxuryCard>
   );
 }

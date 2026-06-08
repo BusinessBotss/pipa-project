@@ -14,60 +14,49 @@ La estructura técnica ya soporta todos estos tipos de datos, pero necesitamos e
 ## 1. Casa Palmeira
 * **Status**: `needs_review`
 * **Assets Faltantes**:
-  * ✅ Hero Image (needs_review)
-  * ✅ 4 Gallery Images (needs_review)
-  * Tarifario oficial / Políticas de check-in y check-out
+  * ✅ 1 hero
+  * ✅ 4 gallery
+  * Tarifario
+  * Google Maps
   * Logo
-* **Datos Faltantes**:
-  * Número oficial de WhatsApp para reservas (con código de país)
-  * URL de Google Maps
 
 ## 2. Recanto de Ibiza
 * **Status**: `needs_review`
 * **Assets Faltantes**:
-  * ✅ Hero Image (needs_review)
-  * ✅ 4 Gallery Images (needs_review)
+  * ✅ 1 hero
+  * ✅ 4 gallery
   * Tarifario
+  * Bio texts
   * Logo
-* **Datos Faltantes**:
-  * Textos descriptivos (Bio)
-  * WhatsApp oficial
 
 ## 3. Umi Fun Kitchen
 * **Status**: `needs_review`
 * **Assets Faltantes**:
-  * ✅ Hero Image (needs_review)
-  * ✅ 11 Gallery Images (needs_review)
-  * Menú Food (PDF/Link)
-  * Menú Drinks (PDF/Link)
-  * Menú Breakfast/Brunch (PDF/Link)
-  * Menú Delivery (PDF/Link)
+  * ✅ 1 hero
+  * ✅ 11 gallery — 6 food, 2 drinks, 3 sunset
+  * Menus PDF/Link
   * Logo
-* **Datos Faltantes**:
-  * Confirmar horarios exactos de operación.
+  * WhatsApp
 
 ## 4. Makai Pool Club
 * **Status**: `needs_review`
 * **Assets Faltantes**:
-  * ✅ Hero Image (needs_review)
-  * ✅ 8 Gallery Images (needs_review)
-  * Menú Food & Drinks (PDF/Link)
-  * Info de Day Use (Precios, condiciones)
-  * Bottle Service Menu
+  * ✅ 1 hero
+  * ✅ 8 gallery
+  * Menus
+  * Day Use pricing
+  * Bottle service
   * Logo
-* **Datos Faltantes**:
-  * Capacidades y precios base.
 
 ## 5. Makai The Club (Nightlife)
 * **Status**: `needs_review`
 * **Assets Faltantes**:
-  * ✅ Hero Image (needs_review)
-  * ✅ 6 Gallery Images (needs_review)
-  * Bottle Service / Carta VIP
-  * Flyer genérico o Agenda de eventos próximos (Listado mensual)
+  * ✅ 1 hero
+  * ✅ 6 gallery
+  * Bottle service/VIP details
+  * Event calendar
+  * Tickets link
   * Logo
-* **Datos Faltantes**:
-  * Link de guestlist / tickets (Sympla o similar)
 
 ## 6. Nami Madeiro
 * **Status**: `needs_review`

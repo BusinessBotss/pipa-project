@@ -1,6 +1,6 @@
 import type { Field } from '@/types/common';
 import type { Locale, LocalizedText } from '@/types/locale';
-import { localize } from '@/lib/i18n';
+import { localize, t } from '@/lib/i18n';
 import { translations } from '@/data/translations';
 
 /**
@@ -14,7 +14,7 @@ export function fieldText(
   locale: Locale,
   fallbackKey: keyof typeof translations = 'common.toBeConfirmed',
 ): string {
-  const fallback = translations[fallbackKey][locale];
+  const fallback = t(locale, fallbackKey);
   if (!field || field.value == null) return fallback;
   if (typeof field.value === 'string') return field.value;
   return localize(locale, field.value) || fallback;
