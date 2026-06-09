@@ -12,7 +12,7 @@ import {
   discoverIntro,
   discoverSections,
   discoverFinalCta,
-  discoverGallery,
+  discoverPipaImages,
 } from '@/data/discover';
 
 export default function HomePage({ params }: { params: { locale: Locale } }) {
@@ -21,11 +21,11 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
   const contactHref = `/${locale}/contact`;
   const s = discoverSections;
 
-  // Editorial blocks paired with a gallery image (text + image, alternating).
+  // Editorial blocks paired with a region image (generic alt; no content claim).
   const editorial = [
-    { ...s.nature, img: discoverGallery[8], flip: false },
-    { ...s.culture, img: discoverGallery[5], flip: true },
-    { ...s.food, img: discoverGallery[3], flip: false },
+    { ...s.nature, img: discoverPipaImages[8], flip: false },
+    { ...s.culture, img: discoverPipaImages[5], flip: true },
+    { ...s.food, img: discoverPipaImages[3], flip: false },
   ];
 
   return (
@@ -70,24 +70,13 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
           <h2 className="text-3xl sm:text-4xl">{L(s.beaches.title)}</h2>
           <p className="mt-3 text-muted">{L(s.beaches.body)}</p>
         </div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {beaches.map((b, i) => (
-            <figure key={b.name} className="group relative overflow-hidden rounded-2xl border border-white/10">
-              <div className="relative aspect-[3/4]">
-                <Image
-                  src={discoverGallery[i % discoverGallery.length].url}
-                  alt={b.name}
-                  fill
-                  sizes="(max-width:768px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-              </div>
-              <figcaption className="absolute inset-x-0 bottom-0 p-4">
-                <p className="font-serif text-lg text-sand">{b.name}</p>
-                <p className="mt-1 text-xs text-white/70">{b.tag[locale] ?? b.tag['pt-BR']}</p>
-              </figcaption>
-            </figure>
+        {/* Text only — we don't pair beach names with unverified photos. */}
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {beaches.map((b) => (
+            <div key={b.name} className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 backdrop-blur">
+              <p className="font-serif text-lg text-sand">{b.name}</p>
+              <p className="mt-1 text-sm text-muted">{b.tag[locale] ?? b.tag['pt-BR']}</p>
+            </div>
           ))}
         </div>
       </section>
@@ -137,23 +126,28 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
         </ul>
       </section>
 
-      {/* ── Gallery ──────────────────────────────────────── */}
-      <section id="gallery" className="container-content scroll-mt-20 py-12">
-        <h2 className="mb-8 text-3xl sm:text-4xl">Praia da Pipa</h2>
-        <div className="grid auto-rows-[180px] grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {discoverGallery.map((g, i) => (
-            <ImageFrame
-              key={g.url}
-              src={g.url}
-              alt={L(g.alt)}
-              fill
-              sizes="(max-width:768px) 50vw, 25vw"
-              containerClassName={
-                'h-full ' + (i === 0 ? 'col-span-2 row-span-2' : i % 7 === 5 ? 'row-span-2' : '')
-              }
-            />
-          ))}
+      {/* ── Gallery (captionless carousel, all images) ───── */}
+      <section id="gallery" className="scroll-mt-20 py-12">
+        <div className="container-content mb-8">
+          <h2 className="text-3xl sm:text-4xl">Praia da Pipa</h2>
         </div>
+        <ul
+          className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          aria-label="Praia da Pipa"
+        >
+          {discoverPipaImages.map((g) => (
+            <li key={g.id} className="shrink-0 snap-center">
+              <ImageFrame
+                src={g.url}
+                alt={L(g.alt)}
+                width={520}
+                height={360}
+                sizes="(max-width:768px) 80vw, 520px"
+                className="h-[280px] w-[78vw] max-w-[520px] object-cover sm:h-[360px]"
+              />
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* ── Responsible travel ───────────────────────────── */}
@@ -166,7 +160,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
 
       {/* ── Final CTA ────────────────────────────────────── */}
       <section className="relative isolate overflow-hidden py-24">
-        <Image src={discoverGallery[4].url} alt="" fill sizes="100vw" className="object-cover opacity-30" />
+        <Image src={discoverPipaImages[4].url} alt="" fill sizes="100vw" className="object-cover opacity-30" />
         <div className="absolute inset-0 bg-bg/70" />
         <div className="container-content relative text-center">
           <h2 className="mx-auto max-w-2xl text-3xl sm:text-4xl">{L(discoverFinalCta.title)}</h2>

@@ -110,23 +110,72 @@ export const discoverFinalCta = {
   } as LocalizedText,
 };
 
-/** Editorial gallery of Praia da Pipa (Cloudinary). */
-export const discoverGallery: { url: string; alt: LocalizedText }[] = [
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010127/Praia_do_amor_laj2ae.jpg', alt: { 'pt-BR': 'Praia do Amor, Pipa' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010127/Praia_do_Amor_-_Pipa_RN_Brasil_vt46om.jpg', alt: { 'pt-BR': 'Praia do Amor, Pipa - RN' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010126/Praia_do_Amor_-_Pipa_-_RN_svlq5f.jpg', alt: { 'pt-BR': 'Praia do Amor vista das falésias' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010126/Praia_da_Pipa_iu4j9o.jpg', alt: { 'pt-BR': 'Praia da Pipa' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010125/Praia_da_Pipa_-_Sunset_e2f5r2.jpg', alt: { 'pt-BR': 'Pôr do sol na Praia da Pipa' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010125/Pipa_RN_czafly.jpg', alt: { 'pt-BR': 'Pipa, Rio Grande do Norte' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010125/PIPA_RN_1_p1jdau.jpg', alt: { 'pt-BR': 'Pipa, RN' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010124/Pipa_RN_kwygd2.jpg', alt: { 'pt-BR': 'Litoral de Pipa' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010124/Pipa_RN_2_f6nauo.jpg', alt: { 'pt-BR': 'Falésias de Pipa' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010123/__-_2026-06-09T145752.874_m3t8in.jpg', alt: { 'pt-BR': 'Paisagem de Pipa' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010123/Pipa_RN_1_rayagp.jpg', alt: { 'pt-BR': 'Praia da Pipa' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010123/Nordeste_e_Seus_Encantos_on_Instagram__%EF%B8%8F_QUER_SUA_FOTO_AQUI__MARQUE_UMA_PESSOA_ESPECIAL_AQUI_Foto__praiadapipa_-_Praia_de_Pipa_-_RN_Use_nossa_hashtag_neeseusencantos_nema2e.jpg', alt: { 'pt-BR': 'Praia de Pipa - RN' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010122/Bajada_a_Praia_do_Amor_Pipa_qi2651.jpg', alt: { 'pt-BR': 'Descida para a Praia do Amor' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010122/pipa_-_rio_grande_do_norte_e4irdm.jpg', alt: { 'pt-BR': 'Pipa, Rio Grande do Norte' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010122/Pipa_-_RN_jjlapt.jpg', alt: { 'pt-BR': 'Pipa - RN' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010122/pipa_-_rn_k1nyvl.jpg', alt: { 'pt-BR': 'Pipa - RN' } },
-  { url: 'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010121/Passeios_em_Pipa___Praia_da_Pipa___Rio_Grande_do_Norte_lp9jnp.jpg', alt: { 'pt-BR': 'Passeios em Pipa' } },
+/**
+ * Editorial images of the Praia da Pipa region (Cloudinary).
+ * IMPORTANT: image content is NOT visually verified, so we DO NOT claim what
+ * each photo shows. Neutral ids + safe, generic alt text only.
+ * status: needs_review until each image is inspected & usage confirmed.
+ */
+type DiscoverImage = { id: string; url: string; alt: LocalizedText; status: 'needs_review'; source: string };
+
+const SOURCE = 'provided_url_needs_usage_confirmation';
+
+// Safe, generic alt variants (rotated). None claim a specific subject.
+const ALT_VARIANTS: LocalizedText[] = [
+  {
+    'pt-BR': 'Imagem cênica de Praia da Pipa, Rio Grande do Norte',
+    en: 'Scenic image of Praia da Pipa, Rio Grande do Norte',
+    es: 'Imagen escénica de Praia da Pipa, Rio Grande do Norte',
+    de: 'Stimmungsbild aus Praia da Pipa, Rio Grande do Norte',
+    fr: 'Image d’ambiance de Praia da Pipa, Rio Grande do Norte',
+  },
+  {
+    'pt-BR': 'Imagem litorânea de Praia da Pipa, Brasil',
+    en: 'Coastal image from Praia da Pipa, Brazil',
+    es: 'Imagen costera de Praia da Pipa, Brasil',
+    de: 'Küstenbild aus Praia da Pipa, Brasilien',
+    fr: 'Image côtière de Praia da Pipa, Brésil',
+  },
+  {
+    'pt-BR': 'Imagem de viagem de Praia da Pipa e do litoral ao redor',
+    en: 'Travel image from Praia da Pipa and surrounding coastline',
+    es: 'Imagen de viaje de Praia da Pipa y su litoral',
+    de: 'Reisebild aus Praia da Pipa und der umliegenden Küste',
+    fr: 'Image de voyage de Praia da Pipa et de son littoral',
+  },
+  {
+    'pt-BR': 'Paisagem da região de Pipa, Rio Grande do Norte',
+    en: 'Landscape image from the Pipa region in Rio Grande do Norte',
+    es: 'Paisaje de la región de Pipa, Rio Grande do Norte',
+    de: 'Landschaftsbild aus der Region Pipa, Rio Grande do Norte',
+    fr: 'Paysage de la région de Pipa, Rio Grande do Norte',
+  },
 ];
+
+const RAW_URLS = [
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010127/Praia_do_amor_laj2ae.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010127/Praia_do_Amor_-_Pipa_RN_Brasil_vt46om.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010126/Praia_do_Amor_-_Pipa_-_RN_svlq5f.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010126/Praia_da_Pipa_iu4j9o.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010125/Praia_da_Pipa_-_Sunset_e2f5r2.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010125/Pipa_RN_czafly.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010125/PIPA_RN_1_p1jdau.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010124/Pipa_RN_kwygd2.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010124/Pipa_RN_2_f6nauo.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010123/__-_2026-06-09T145752.874_m3t8in.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010123/Pipa_RN_1_rayagp.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010123/Nordeste_e_Seus_Encantos_on_Instagram__%EF%B8%8F_QUER_SUA_FOTO_AQUI__MARQUE_UMA_PESSOA_ESPECIAL_AQUI_Foto__praiadapipa_-_Praia_de_Pipa_-_RN_Use_nossa_hashtag_neeseusencantos_nema2e.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010122/Bajada_a_Praia_do_Amor_Pipa_qi2651.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010122/pipa_-_rio_grande_do_norte_e4irdm.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010122/Pipa_-_RN_jjlapt.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010122/pipa_-_rn_k1nyvl.jpg',
+  'https://res.cloudinary.com/dxhef6dju/image/upload/v1781010121/Passeios_em_Pipa___Praia_da_Pipa___Rio_Grande_do_Norte_lp9jnp.jpg',
+];
+
+export const discoverPipaImages: DiscoverImage[] = RAW_URLS.map((url, i) => ({
+  id: `discover-pipa-${String(i + 1).padStart(2, '0')}`,
+  url,
+  alt: ALT_VARIANTS[i % ALT_VARIANTS.length],
+  status: 'needs_review',
+  source: SOURCE,
+}));
