@@ -22,15 +22,16 @@ export function LocaleSwitcher({ locale }: { locale: Locale }) {
   }
 
   return (
-    <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.02] p-1 backdrop-blur" role="group" aria-label="Language">
+    // No background — just the initials.
+    <div className="flex items-center gap-2" role="group" aria-label="Language">
       {LOCALES.map((l) => (
         <button
           key={l}
           onClick={() => switchTo(l)}
           aria-current={l === locale ? 'true' : undefined}
           className={
-            'rounded-full px-2.5 py-1 text-[10px] font-medium tracking-widest transition-all ' +
-            (l === locale ? 'bg-gold text-black shadow-lg' : 'text-sand hover:bg-white/[0.08]')
+            'bg-transparent px-1 text-[11px] font-medium tracking-widest transition-colors ' +
+            (l === locale ? 'text-gold' : 'text-muted hover:text-text')
           }
         >
           {LABEL[l]}
