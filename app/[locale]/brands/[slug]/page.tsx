@@ -11,6 +11,8 @@ import { VerificationBadge } from '@/components/brand/VerificationBadge';
 import { fieldText } from '@/components/brand/fieldText';
 import { BrandCard } from '@/components/brand/BrandCard';
 import { PremiumButton } from '@/components/ui/PremiumButton';
+import { GlassButton } from '@/components/ui/GlassButton';
+import { ImageFrame } from '@/components/ui/ImageFrame';
 import { LuxuryCard } from '@/components/ui/LuxuryCard';
 import { SectionHeading } from '@/components/sections/SectionHeading';
 import { resolveWhatsapp, resolveInstagram } from '@/lib/config/contact-routing';
@@ -49,8 +51,9 @@ export default function BrandPage({
   const similar = getSimilarBrands(brand);
 
   // Real asset resolution — prefer brand-assets over Unsplash placeholders.
-  const heroAsset = getBrandHeroAsset(brand.id);
-  const galleryAssets = getBrandGalleryAssets(brand.id);
+  // Asset brandId keys are slugs (e.g. 'umi-fun-kitchen'), not the short id.
+  const heroAsset = getBrandHeroAsset(brand.slug);
+  const galleryAssets = getBrandGalleryAssets(brand.slug);
   const heroSrc = heroAsset && isSafePublicUrl(heroAsset.url)
     ? heroAsset.url
     : brand.heroImage;
@@ -177,15 +180,14 @@ export default function BrandPage({
               {galleryAssets.length > 0 ? (
                 <div className="grid grid-cols-3 gap-1 mt-2">
                   {galleryAssets.slice(0, 6).map((a) => (
-                    <div key={a.id} className="relative aspect-square overflow-hidden rounded">
-                      <Image
-                        src={a.url}
-                        alt={a.alt?.[locale] ?? a.alt?.['pt-BR'] ?? localize(locale, a.title)}
-                        fill
-                        className="object-cover"
-                        sizes="150px"
-                      />
-                    </div>
+                    <ImageFrame
+                      key={a.id}
+                      src={a.url}
+                      alt={a.alt?.[locale] ?? a.alt?.['pt-BR'] ?? localize(locale, a.title)}
+                      fill
+                      sizes="150px"
+                      containerClassName="aspect-square"
+                    />
                   ))}
                 </div>
               ) : (
@@ -208,17 +210,16 @@ export default function BrandPage({
             {/* Direct WhatsApp only when a confirmed number exists; otherwise the
                 booking CTA above acts as "Consultar". Never renders PENDING. */}
             {waNumber ? (
-              <a
+              <GlassButton
                 href={buildWhatsappLink({
                   number: waNumber,
                   message: `Olá ${brand.name}, gostaria de mais informações.`,
                 })}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 block rounded-full bg-whatsapp px-5 py-2 text-center text-sm font-medium text-black"
+                external
+                className="mt-3 w-full hover:border-whatsapp/50 hover:text-whatsapp"
               >
                 WhatsApp
-              </a>
+              </GlassButton>
             ) : (
               <p className="mt-3 text-center text-sm text-muted">{t(locale, 'common.consult')}</p>
             )}

@@ -29,7 +29,8 @@ const pathLabelKey: Record<Brand['audiencePath'], TranslationKey> = {
 
 export function BrandCard({ brand, locale }: { brand: Brand; locale: Locale }) {
   const href = `/${locale}/brands/${brand.slug}`;
-  const heroAsset = getBrandHeroAsset(brand.id);
+  // Asset brandId keys are slugs (e.g. 'umi-fun-kitchen'), not the short id.
+  const heroAsset = getBrandHeroAsset(brand.slug);
   const heroSrc = heroAsset && isSafePublicUrl(heroAsset.url) ? heroAsset.url : brand.heroImage;
 
   return (

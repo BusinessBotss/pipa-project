@@ -6,10 +6,11 @@ interface ImageFrameProps extends Omit<ImageProps, 'className'> {
   containerClassName?: string;
 }
 
-export function ImageFrame({ className = '', containerClassName = '', ...props }: ImageFrameProps) {
+export function ImageFrame({ className = '', containerClassName = '', alt, ...props }: ImageFrameProps) {
   return (
     <div className={`relative overflow-hidden rounded-xl bg-black ${containerClassName}`}>
       <Image
+        alt={alt}
         className={`object-cover transition-transform duration-700 ease-out hover:scale-105 ${className}`}
         {...props}
       />
