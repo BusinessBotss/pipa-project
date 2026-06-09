@@ -9,13 +9,16 @@ export function generateStaticParams() {
   return getBrands().map((b) => ({ slug: b.slug }));
 }
 
+// Only public-ready brands get a route; unknown/non-public slugs → 404.
+export const dynamicParams = false;
+
 export default function BookPage({
   params,
 }: {
   params: { slug: string; locale: Locale };
 }) {
   const brand = getBrandBySlug(params.slug);
-  if (!brand) notFound();
+  if (!brand || brand.publicReady === false) notFound();
   const { locale } = params;
 
   return (

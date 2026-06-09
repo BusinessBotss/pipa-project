@@ -40,8 +40,10 @@ Not yet wired (available to add): InteractiveImageSelector, InfiniteSlider, Tilt
 | Nami Madeiro | dine, pool, events | needs_review | WA/email placeholder |
 | Casa Palmeira Pipa | stay | needs_review | addr + WA **verified**, 5 quartos/2 apts verified; rest placeholder |
 | Recanto de Ibiza | stay | needs_review | addr + WA + email **verified**, 5 quartos/4 apts; rest placeholder |
-| Novo Restaurante Bar 2026 | dine, coming_soon | placeholder | NEW; all TODO_CONTENT |
-| PIPA Ice Supply | partners | placeholder | TODO_CONTENT |
+| Novo Restaurante Bar 2026 | dine, coming_soon | **not built yet** | `publicReady: false` — future concept, hidden from public frontend & routes |
+| PIPA Ice Supply | partners | **not built yet** | `publicReady: false` — B2B concept, not public-ready; hidden from public frontend & routes |
+
+**Public vs not-built:** 7 active brands have real images (Casa Palmeira, Recanto de Ibiza, Umi, Makai Pool Club, Makai The Club, Nami Madeiro, TĀO Pipa). The 2 above are **not built yet** (not "missing assets") — they carry `publicReady: false`, stay in internal data, and are filtered out of every public listing, similar-experiences, sitemap, and their `/brands` & `/book` routes return 404. Use `getAllBrands()` for internal access, `getBrands()` for anything public.
 
 Contact routing: live WhatsApp/Instagram CTAs resolve through
 `lib/config/contact-routing.ts` via each brand's `contactKey`. Numbers marked

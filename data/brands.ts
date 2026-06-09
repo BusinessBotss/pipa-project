@@ -424,6 +424,7 @@ export const brands: Brand[] = [
     name: 'Novo Restaurante Bar 2026',
     audiencePath: 'dine',
     categoryGroups: ['dine', 'coming_soon'],
+    publicReady: false, // not built yet — future concept, hidden from public
     category: 'restaurant',
     contactKey: 'newRestaurant',
     subtitle: {
@@ -457,6 +458,7 @@ export const brands: Brand[] = [
     name: 'PIPA Ice Supply',
     audiencePath: 'partners',
     categoryGroups: ['partners'],
+    publicReady: false, // not built yet — B2B concept, hidden from public
     category: 'b2b',
     contactKey: 'ice',
     subtitle: {

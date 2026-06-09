@@ -22,6 +22,9 @@ import { brandAssets, getBrandHeroAsset, getBrandGalleryAssets } from '@/data/br
 import { brandMenus } from '@/data/brand-menus';
 import { safeExternalHref, isSafePublicUrl } from '@/lib/security/url';
 
+// Only public-ready brands get a route; unknown/non-public slugs → 404.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getBrands().map((b) => ({ slug: b.slug }));
 }
@@ -46,7 +49,7 @@ export default function BrandPage({
   params: { slug: string; locale: Locale };
 }) {
   const brand = getBrandBySlug(params.slug);
-  if (!brand) notFound();
+  if (!brand || brand.publicReady === false) notFound();
   const { locale } = params;
   const similar = getSimilarBrands(brand);
 

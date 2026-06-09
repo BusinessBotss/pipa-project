@@ -58,6 +58,12 @@ export type Brand = {
   name: string;
   audiencePath: AudiencePath;
   categoryGroups: CategoryGroup[];
+  /**
+   * Whether this is a real, built, public-ready brand. `false` = concept not
+   * built yet (kept in internal data, hidden from all public listings/routes).
+   * Undefined is treated as public.
+   */
+  publicReady?: boolean;
   category: BrandCategory;
   /** Key into lib/config/contact-routing (WhatsApp/Instagram). */
   contactKey?: ContactKey;
