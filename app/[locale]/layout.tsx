@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import { isLocale, LOCALES, type Locale } from '@/types/locale';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { MobileNav } from '@/components/layout/MobileNav';
 import { LangSync } from '@/components/layout/LangSync';
 
 export function generateStaticParams() {
@@ -23,9 +22,8 @@ export default function LocaleLayout({
     <>
       <LangSync locale={locale} />
       <Header locale={locale} />
-      <main className="min-h-[60vh] pb-20 md:pb-0">{children}</main>
+      <main className="min-h-[60vh]">{children}</main>
       <Footer locale={locale} />
-      <MobileNav locale={locale} />
     </>
   );
 }

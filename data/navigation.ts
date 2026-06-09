@@ -3,12 +3,11 @@ import type { TranslationKey } from './translations';
 
 export type NavItem = { key: TranslationKey; href: string };
 
+// Landing-page navigation: in-page anchors + contact.
 export const mainNav: NavItem[] = [
-  { key: 'nav.experiences', href: '/experiences' },
-  { key: 'nav.stay', href: '/stay' },
-  { key: 'nav.dine', href: '/dine' },
-  { key: 'nav.pool', href: '/pool' },
-  { key: 'nav.events', href: '/events' },
+  { key: 'nav.beaches', href: '#beaches' },
+  { key: 'nav.activities', href: '#activities' },
+  { key: 'nav.gallery', href: '#gallery' },
   { key: 'nav.contact', href: '/contact' },
 ];
 

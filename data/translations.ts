@@ -29,6 +29,9 @@ export const translations = {
   'nav.contact': { 'pt-BR': 'Contato', en: 'Contact', es: 'Contacto' , de: 'Kontakt', fr: 'Contact' },
   'nav.saved': { 'pt-BR': 'Salvos', en: 'Saved', es: 'Guardados' , de: 'Gespeichert', fr: 'Enregistrés' },
   'nav.home': { 'pt-BR': 'Início', en: 'Home', es: 'Inicio' , de: 'Startseite', fr: 'Accueil' },
+  'nav.beaches': { 'pt-BR': 'Praias', en: 'Beaches', es: 'Playas', de: 'Strände', fr: 'Plages' },
+  'nav.activities': { 'pt-BR': 'O que fazer', en: 'What to do', es: 'Qué hacer', de: 'Aktivitäten', fr: 'À faire' },
+  'nav.gallery': { 'pt-BR': 'Galeria', en: 'Gallery', es: 'Galería', de: 'Galerie', fr: 'Galerie' },
 
   // ── Paths / CTAs ────────────────────────────────────────
   'path.stay': { 'pt-BR': 'Hospedagem', en: 'Stay', es: 'Alojamiento' , de: 'Aufenthalt', fr: 'Séjour' },
